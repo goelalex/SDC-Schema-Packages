@@ -250,7 +250,6 @@ complete: all information is available in the requested report</xs:documentation
 							<xs:enumeration value="pending"/>
 							<xs:enumeration value="incomplete"/>
 							<xs:enumeration value="complete"/>
-							<xs:enumeration value="retracted"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
