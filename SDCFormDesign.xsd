@@ -136,8 +136,16 @@ This event is fired after the page is loaded into memory, before stored form dat
 This event is fired after the page is loaded is memory, after the data is loaded into the form, but before the form is displayed.  It may be used to perform form activities that are controlled by the loaded data.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="BeforeDataSubmit" type="EventType"/>
-          <xs:element minOccurs="0" name="BeforeCloseForm" type="EventType"/>
+          <xs:element minOccurs="0" name="BeforeDataSubmit" type="EventType">
+            <xs:annotation>
+              <xs:documentation>This event is fired after the page is loaded is memory, after the data is submitted from the form to the Form Reciever.  It may be used to alter, validate, or cancel the submission process.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BeforeCloseForm" type="EventType">
+            <xs:annotation>
+              <xs:documentation>This event can check for changed data that has not been submitted and optionally warn the user before closing the form. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element minOccurs="0" name="OnEvent" maxOccurs="unbounded" type="OnEventType">
             <xs:annotation>
               <xs:documentation>Generic event handler - eventName must be specified.</xs:documentation>

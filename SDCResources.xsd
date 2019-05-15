@@ -1142,11 +1142,23 @@ RENAMED:  'OtherText' to 'Property' 9/14/2016</xs:documentation>
 			<xs:extension base="BaseType">
 				<xs:sequence>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="Comment"
-						type="CommentType"> </xs:element>
+						type="CommentType">
+						<xs:annotation>
+							<xs:documentation>Comments may be provided by the Form designer, the Form implementation code, or by the Form user.  The type and styling of the Comment (if present) can be customized with the type and styleClass attributes.  The comments are simple ASCII text and may not include rich text or substructures.  The Comment content is placed in the val attribute of the Comment element.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="Extension"
-						type="ExtensionType"> </xs:element>
+						type="ExtensionType">
+						<xs:annotation>
+							<xs:documentation>The Extension element provides a place to insert XML that is not defined in the SDC Schema.  The sub-elements of Extension must provide a namespace (and ideally an XML Schema) for any non-SDC elements and attributes that are introduced. The Extension element provides almost infinite expansion flexibility for SDC.  However, it also requires that form designers and implementers agree on the supported extensions, agree on which elements to accept and the contexts in which they may be used, document this usage, and create an extension validation mechanism to enforce correct usage and detect incorrect usage.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="Property"
-						type="PropertyType"/>
+						type="PropertyType">
+						<xs:annotation>
+							<xs:documentation>Property is any type of secondary text that is associated with any form item (e.g., section, question, list item) in any context. The Description context is specified by the @type attribute.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
